@@ -103,7 +103,7 @@ static const CGFloat WebViewProgressFinalProgressValue = 0.9f;
     if (!_progressView) {
         
         UIViewController *viewController = (UIViewController*)self.webViewProxy;
-        _progressView = [[ZLWebViewProgressBar alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(viewController.view.bounds), 1)];
+        _progressView = [[ZLWebViewProgressBar alloc]initWithFrame:CGRectMake(0, [[UIApplication sharedApplication]statusBarFrame].size.height, CGRectGetWidth(viewController.view.bounds), 1)];
         _progressView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleBottomMargin;
         [viewController.view addSubview:_progressView];
         
